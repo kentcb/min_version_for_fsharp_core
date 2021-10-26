@@ -1,5 +1,17 @@
 <Project>
   <ItemGroup>
+    <!--
+    Assign default package versions.
+    -->
     <PackageReference Update="FSharp.Core" Version="4.7.2" />
+
+    <!--
+    Allow individual projects to override the defaults on an as-need basis.
+    -->
+    <_PackageReferenceWithVersionOverride
+      Include="@(PackageReference->HasMetadata('VersionOverride'))"
+      Version="%(VersionOverride)"/>
+    <PackageReference Remove="@(_PackageReferenceWithVersionOverride)"/>
+    <PackageReference Include="@(_PackageReferenceWithVersionOverride)"/>
   </ItemGroup>
 </Project>

@@ -9,7 +9,8 @@
   We want this project to use FSharp.Core 5.0.2 rather than the default of 4.7.2 established by the Directory.Build.* files.
   -->
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="5.0.2" />
+    <PackageReference Update="FSharp.Core" VersionOverride="5.0.2" />
+    <PackageReference Include="FSharpPlus" Version="1.2.1" />
   </ItemGroup>
 
   <ItemGroup>
