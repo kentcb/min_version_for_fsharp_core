@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  
+  <!--
+  We want this project to use version 4.7.2 of FSharp.Core by default, so it inherits this via the Directory.Build.* files.
+  You can imagine us having many such projects where we want to control the default version of FSharp.Core from a single place.
+  -->
+
+  <ItemGroup>
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+
+</Project>
